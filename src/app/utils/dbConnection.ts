@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MONGO_URI = "mongodb://localhost:27017/UserData";
+const MONGO_URI = process.env.NEXT_PUBLIC_MONGO_URI;
 console.log(MONGO_URI);
 
 const connect = async () => {

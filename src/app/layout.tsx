@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/NavBar"; // ✅ Check correct casing (NavBar → Navbar)
-import Providers from "@/Provider"; // ✅ Ensure correct path
 import AuthProvider from "@/app/utils/AuthProvider"; // ✅ Ensure correct path
+import Sidebar from "@/components/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,10 +21,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter?.className || ""}> {/* ✅ Ensure valid className */}
         <AuthProvider>
-          <div className="mx-auto max-w-5xl text-2xl gap-2 mb-10">
-            <Navbar />
-            {children}
-          </div>
+            <div className="bg-black h-screen p-4 flex flex-col gap-2">
+                 <div className="bg-white"><Navbar/></div>
+                 <div className="flex gap-2 flex-1">
+                  <div className="m-5 bg-gradient-to-t from-blue-950 via-blue-400 to-blue-800 w-[10%] rounded-full ">
+                    <Sidebar/>
+                  </div>
+                  <div className=" m-5 bg-yellow-600 w-[90%]">{children}</div>
+                 </div>
+            </div>
         </AuthProvider>
       </body>
     </html>

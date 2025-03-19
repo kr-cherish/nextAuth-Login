@@ -26,7 +26,7 @@ export const POST = async (request: Request) => {
     await newUser.save();
     return NextResponse.json(
       { message: "User registered successfully" },
-      { status: 201 }
+      { status: 200 }
     );
   } catch (err: any) {
     console.error(" Registration error:", err.message);

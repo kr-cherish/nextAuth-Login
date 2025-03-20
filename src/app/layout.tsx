@@ -21,13 +21,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter?.className || ""}> {/* ✅ Ensure valid className */}
         <AuthProvider>
-            <div className="bg-black h-screen p-4 flex flex-col gap-2">
-                 <div className="bg-white"><Navbar/></div>
+            <div className="bg-gradient-to-r from-gray-900 via-neutral-800 to-neutral-900 h-screen p-4 flex flex-col gap-2">
+                 <div className="rounded-full bg-gradient-to-r from-gray-700 via-neutral-600 to-neutral-700"><Navbar/></div>
                  <div className="flex gap-2 flex-1">
-                  <div className="m-5 bg-gradient-to-t from-blue-950 via-blue-400 to-blue-800 w-[10%] rounded-full ">
+                  <div className="m-5 w-[5%] rounded-full ">
                     <Sidebar/>
                   </div>
-                  <div className=" m-5 bg-yellow-600 w-[90%]">{children}</div>
+                  <div className=" m-5 w-[95%]">{children}</div>
                  </div>
             </div>
         </AuthProvider>

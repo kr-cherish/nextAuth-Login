@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
-import Image from "next/image";
 import type { Session } from "next-auth";
 
 const Navbar = () => {
@@ -26,23 +25,24 @@ const Navbar = () => {
             {/* <Image src="/public/logo 1.png" width={50} height={50} alt="star logo" /> */}
           </Link>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex ml-100 lg:gap-x-12">
           {navigation.map((item) => (
-            <Link
+            <Link 
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sms font-semibold leading-6 text-white"
             >
               {item.name}
             </Link>
           ))}
         </div>
-        <div className="flex flex-1 items-center justify-end gap-x-6">
+        <div className="flex flex-1 items-center justify-end gap-x-6 ">
           {!session ? (
             <>
               <Link
                 href="/login"
-                className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900"
+                className="hidden lg:block lg:text-sm lg:font-semibold bg-black text-white rounded-md px-5 py-2"
+
               >
                 Log in
               </Link>
